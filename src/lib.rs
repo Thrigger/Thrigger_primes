@@ -21,16 +21,32 @@ mod tests {
         assert_eq!(is_prime(19), true);
         assert_eq!(is_prime(29), true);
     }
+
+    #[test]
+    fn test_get_next() {
+        /* Some basic sanity tests */
+        assert_eq!(get_next(5), 7);
+        assert_eq!(get_next(7), 11);
+        assert_eq!(get_next(17), 19);
+        assert_eq!(get_next(18), 19);
+        assert_eq!(get_next(19), 23);
+        assert_eq!(get_next(29), 31);
+    }
+
 }
 
-//pub fn get_next_prime(current: i64) -> i64 {
-//
-//    let mut next = current + 1;
-//    while !is_prime(next) {
-//        next += 1;
-//    }
-//    next
-//}
+pub fn get_next(current: i64) -> i64 {
+
+    let mut next = match current % 2 {
+        0 => current + 1,
+        _ => current + 2
+    };
+
+    while !is_prime(next) {
+        next += 2;
+    }
+    next
+}
 
 fn is_prime_brute_force(start: i64, numb: i64) -> bool {
     let mut i = start;
