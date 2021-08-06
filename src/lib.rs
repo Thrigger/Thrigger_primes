@@ -1,8 +1,25 @@
 #[cfg(test)]
 mod tests {
+    use super::*;
+    
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn test_is_prime_brute_force() {
+        /* Some basic sanity tests */
+        assert_eq!(is_prime_brute_force(3, 17), true);
+        assert_eq!(is_prime_brute_force(3, 18), false);
+        assert_eq!(is_prime_brute_force(3, 19), true);
+        assert_eq!(is_prime_brute_force(3, 29), true);
+    }
+
+    #[test]
+    fn test_is_prime() {
+        /* Some basic sanity tests */
+        assert_eq!(is_prime(5), true);
+        assert_eq!(is_prime(7), true);
+        assert_eq!(is_prime(17), true);
+        assert_eq!(is_prime(18), false);
+        assert_eq!(is_prime(19), true);
+        assert_eq!(is_prime(29), true);
     }
 }
 
@@ -18,7 +35,7 @@ mod tests {
 fn is_prime_brute_force(start: i64, numb: i64) -> bool {
     let mut i = start;
 
-    while i*i < numb {
+    while i < numb {
         if numb % i == 0 {
             return false;
         }

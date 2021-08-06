@@ -1,5 +1,5 @@
 [package]
-name = "Thrigger_Primes"
+name = "thrigger_primes"
 version = "0.1.0"
 authors = ["Thrigger"]
 edition = "2018"
