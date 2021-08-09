@@ -1,4 +1,4 @@
-pub fn get_next(current: i64) -> i64 {
+pub fn get_next(current: u64) -> u64 {
 
     let mut next = match current % 2 {
         0 => current + 1,
@@ -11,7 +11,7 @@ pub fn get_next(current: i64) -> i64 {
     next
 }
 
-fn is_prime_brute_force(start: i64, numb: i64) -> bool {
+fn is_prime_brute_force(start: u64, numb: u64) -> bool {
     let mut i = start;
 
     while i < numb {
@@ -23,7 +23,7 @@ fn is_prime_brute_force(start: i64, numb: i64) -> bool {
     true
 }
 
-pub fn is_prime(numb: i64) -> bool {
+pub fn is_prime(numb: u64) -> bool {
     let first_primes = vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67];
     
     if numb <= 53 { 
