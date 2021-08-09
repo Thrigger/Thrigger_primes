@@ -1,6 +1,7 @@
 /// Returns the next prime number.
 ///
 /// The functions takes a number as a input and returns the next prime number after that.
+/// This function is NOT optimized for speed and shall not be used if speed is needed.
 pub fn get_next(current: u64) -> u64 {
 
     let mut next = match current % 2 {
@@ -27,9 +28,9 @@ fn is_prime_brute_force(start: u64, numb: u64) -> bool {
 }
 
 pub fn is_prime(numb: u64) -> bool {
-    let first_primes = vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67];
+    let first_primes = vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
     
-    if numb <= 67 { 
+    if numb <= 53 { 
         /* Check if it is one of the first primes.
          * If it is one of the first primes then return true */
         for prime in first_primes {
@@ -46,7 +47,7 @@ pub fn is_prime(numb: u64) -> bool {
         /* Return false since it is not a prime. */
         return false;
     } else {
-        /* If the number is over 19 then check if it is dividable by any of the first primes.
+        /* If the number is over 53 then check if it is dividable by any of the first primes.
          * if it is dividable then return false */
         for prime in first_primes {
             if numb % prime == 0 {
@@ -55,7 +56,7 @@ pub fn is_prime(numb: u64) -> bool {
         }
 
         /* If it might be a prime then do a brute force check */ 
-        return is_prime_brute_force(71, numb);
+        return is_prime_brute_force(57, numb);
     }
 }
 
