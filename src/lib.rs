@@ -1,3 +1,6 @@
+/// Returns the next prime number.
+///
+/// The functions takes a number as a input and returns the next prime number after that.
 pub fn get_next(current: u64) -> u64 {
 
     let mut next = match current % 2 {
@@ -26,7 +29,7 @@ fn is_prime_brute_force(start: u64, numb: u64) -> bool {
 pub fn is_prime(numb: u64) -> bool {
     let first_primes = vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67];
     
-    if numb <= 53 { 
+    if numb <= 67 { 
         /* Check if it is one of the first primes.
          * If it is one of the first primes then return true */
         for prime in first_primes {
